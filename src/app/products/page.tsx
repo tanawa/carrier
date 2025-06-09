@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react';
 import { database } from './../../../lib/firebase';
 import { ref, onValue } from 'firebase/database';
-import QRCode from 'qrcode.react';
 
 export default function ProductListPage() {
   const [products, setProducts] = useState([]);
@@ -16,10 +15,10 @@ export default function ProductListPage() {
         ? Object.entries(data).map(([key, value], index) => ({
             id: key,
             index: index + 1,
-            ...value,
+            ...(value as any),
           }))
         : [];
-      setProducts(loaded);
+      setProducts(loaded as any);
     });
 
     return () => unsubscribe();
@@ -43,12 +42,12 @@ export default function ProductListPage() {
           <tbody className='text-black'>
             {products.length === 0 ? (
               <tr>
-                <td colSpan="6" className="text-center py-6 text-gray-500">
+                <td colSpan={6} className="text-center py-6 text-gray-500">
                   ไม่พบข้อมูลสินค้า
                 </td>
               </tr>
             ) : (
-              products.map((product) => (
+              products.map((product: any) => (
                 <tr key={product.id} className="text-center border-t">
                   <td className="p-2 border">
                     <img src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${product.productCode}`} />
