@@ -1,4 +1,6 @@
+
 @import "tailwindcss";
+
 
 :root {
   --background: #ffffff;
@@ -14,8 +16,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #FFFFFF;
+    --foreground: #211f1f;
   }
 }
 
@@ -23,4 +25,64 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page {
+  padding-top: 20px;
+  width: 800px;
+  height: 700px;
+  display: block;
+  margin: auto;
+}
+
+input[type='text'], input[type='number'] {
+  border-left:2px solid #FFFFFF50;
+  border-top:2px solid #FFFFFF50;
+  border-right:2px solid #FFFFFF20;
+  border-bottom:2px solid #FFFFFF20;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background: linear-gradient(#FFFFFF, #FFFFFF20);
+}
+
+
+.container-action{
+  background-color: #f4f2f290;
+  box-shadow: 0px 10px 20px #DDDDDD;
+  padding: 10px 15px;
+  border-radius: 15px;
+}
+
+hr {
+  border:1px solid #DDDDDD90;
+  margin-top: 10px;
+  margin-bottom: 10px; 
+  display: block;
+}
+
+.title {
+  font-weight: bold;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.input-adder, .group-info {
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  gap: 5%;
+}
+
+.submit {
+  background: linear-gradient(#77de10, #60b40d);
+  color: #FFFFFF;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all .25s ease;
+  &:hover {
+    transform: scale(.95);
+  }
 }

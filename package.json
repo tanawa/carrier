@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-icons/all-files": "^4.1.0",
     "firebase": "^11.9.0",
     "next": "15.3.3",
     "qrcode.react": "^4.2.0",
